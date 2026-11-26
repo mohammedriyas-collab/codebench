@@ -1,0 +1,24 @@
+SECRET_KEY = 'django-insecure-e1n6!lmu*yj=kp*mb#-#+_xhk+u9#vxkcl=bu#i8ektmrmf#i('
+
+
+# python-dotenv  install from cmd(it will hide all secret when you push to git hub withou dotenv git will restric the scret pass or secretkeys )
+
+pip install python-dotenv
+
+    Create a .env file in the root directory of your project:
+         
+        env
+            SECRET_KEY=mysecretkey
+            DATABASE_URL=postgres://user:password@localhost/db
+  
+
+.py
+
+import os
+from dotenv import load_dotenv
+
+load-dotenv()
+
+
+eg:
+SECRET_KEY = os.getenv("SECRET_KEY")

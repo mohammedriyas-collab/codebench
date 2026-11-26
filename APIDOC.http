@@ -1,0 +1,102 @@
+# admin register
+###
+POST  http://127.0.0.1:8000/api/admin/register/
+Content-Type: application/json
+
+{
+   "username":"sudouser",
+   "password":"sudo123",
+   "email":"sudo@gmial.com",
+   "phone":"9633217535"                       
+}
+
+#get token
+###
+POST   http://127.0.0.1:8000/api/token/
+Content-Type: application/json
+
+{
+    "username":"9633217565",
+    "password":"django@123"
+}
+
+# tokken = c72224a617b60020278b76f0afac93c79cc80e1e
+
+
+#problem list
+###
+GET http://127.0.0.1:8000/api/problems/
+Accept: application/json
+Authorization: Token c72224a617b60020278b76f0afac93c79cc80e1e
+
+
+#add problems
+###
+POST http://127.0.0.1:8000/api/problems/
+Content-Type: application/json
+Authorization: Token c72224a617b60020278b76f0afac93c79cc80e1e
+
+{
+    "title":"display even number from 1 to 10",
+    "description":"display even number from 1 to 10",
+    "difficulty":"easy",
+    "language":"python",
+    "points":10
+}
+
+#update problem
+###
+PATCH  http://127.0.0.1:8000/api/problems/1/
+Content-Type: application/json
+Authorization: Token af08369d6a06d04eb31585602ac45135429dba04
+
+{
+   "point":10
+}
+
+
+#fetch problem
+###
+GET http://127.0.0.1:8000/api/problems/1/details/
+Accept: application/json
+Authorization: Token af08369d6a06d04eb31585602ac45135429dba04
+
+
+
+
+#student regiter
+###
+POST  http://127.0.0.1:8000/api/register/
+Content-Type: application/json
+
+{
+   "username":"riyas",
+   "password":"riyas@123",
+   "email":"riyas@gmial.com",           
+   "phone":"8921795345"                       
+}
+#"token": "80865d296a1c4fc79dc7594dee4ff2d7723bad0b"  for studet1
+
+#edit profilel
+###
+GET  http://127.0.0.1:8000/api/profile/
+Accept: application/json
+Authorization: Token b9ad445859abfda37dd46c0b926cd08a480465be
+
+
+#post localhost:8000/api/problem/1/solution/
+#contant :aplication/json
+#autherization: tokem vbtfjkrjlktf
+
+
+
+
+# submission answer
+###
+POST  http://127.0.0.1:8000/api/problem/2/solution/
+Content-Type: application/json
+Authorization: Token  b9ad445859abfda37dd46c0b926cd08a480465be
+
+{
+    "answer":" for num in range(1,11):\n \t num%2==0 \n \t print(num)"
+}
